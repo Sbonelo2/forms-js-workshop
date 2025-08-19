@@ -1,12 +1,49 @@
 *{
 margin:0;
-pading:0;
+padding:0;
 box-sizing:border-box;
+}
 
 
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+main{
+width: 50%;
+height: max-content;
+border: 5px solid purple
+}
+#form{
+    display: none;
+}
+
+#save{
+justify-content: center;
 
 }
-html,body,#root{
+#no{
+    display: none;
+    border-right: center;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 3rem;
+}
 
+span{
+    color: red;
+    padding: 100px;
+}
 
+#getame{
+
+    display: none;
 }
