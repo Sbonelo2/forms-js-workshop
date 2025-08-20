@@ -1,16 +1,12 @@
 import NumberWork from "./numberWork.js";
 import FormControl from "./FormControl.js";
-let username = "mthembu";
-localStorage.setItem("username", username);
-if (localStorage.getItem(username)) {
-  console.log("last name " + username);
-} else {
-  console.log("no first name");
-}
-// windows.setName = () => {
-  
 
-// }
+if (localStorage.getItem("username")) {
+  alert("username found ");
+} else {
+  alert("There is no username");
+};
+
 
 window.start = () => {
   let x = 5;
@@ -22,27 +18,28 @@ window.start = () => {
   window.newForm = newForm;
 };
 window.start();
-
 window.showForm = function () {
-  document.getElementById("form").style.display = "block"; // show form
-  document.getElementById("no").style.display = "none"; // hide goodbye
+  document.getElementById("FormSection").style.display = "block"; // show form
+  document.getElementById("noBtn").style.display = "none"; // hide goodbye
+  document.getElementById("HelloSection").style.display = "none"; // hide goodbye
 };
-
 window.showNo = function () {
-  document.getElementById("no").style.display = "block"; // show goodbye
-  document.getElementById("form").style.display = "none"; // hide form
+  document.getElementById("noBtn").style.display = "block"; // show goodbye
+  document.getElementById("FormSection").style.display = "none"; // hide form
+  document.getElementById("HelloSection").style.display = "none"; // hide goodbye
 };
 
-let input = document.getElementById("yourname");
-let btn = document.getElementById("save");
+let input = document.getElementById("name");
+let btn = document.getElementById("nameBtn");
 btn.addEventListener("click", () => {
-  localStorage.setItem("username", input.value);
-  alert("Saved: " + input.value);
+  if (input.value.trim() !== "") {
+    localStorage.setItem("username", input.value);
+    alert("username is " + input.value);
+  }
 });
 if (localStorage.username) {
-  input.value = localStorage.username;
-  alert("Username found: " + localStorage.username);
+  let name = localStorage.username;
+  alert("Usernames found: " + name);
+} else {
+  alert("There is no username");
 }
-
-
-
